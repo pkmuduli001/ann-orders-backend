@@ -1,16 +1,9 @@
 FROM node:20-alpine
 
 WORKDIR /app
-
-# Install dependencies
 COPY package*.json ./
-RUN npm install --omit=dev
-
-# Copy app
+RUN npm install --production
 COPY . .
 
-# Expose port
-EXPOSE 8080
-
-# Run
-CMD ["node", "index.js"]
+EXPOSE 4000
+CMD ["npm", "start"]
