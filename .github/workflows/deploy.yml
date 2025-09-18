@@ -35,10 +35,10 @@ jobs:
           REPO_NAME=orders-service   # 👈 change to your ECR repo name
 
           echo "Building Docker image..."
-          docker build -t $ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/$REPO_NAME:$IMAGE_TAG .
+          docker build -t 824368189413.dkr.ecr.us-east-1.amazonaws.com/orders-service:$IMAGE_TAG .
 
           echo "Pushing to ECR..."
-          docker push $ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/$REPO_NAME:$IMAGE_TAG
+          docker push 824368189413.dkr.ecr.us-east-1.amazonaws.com/orders-service:$IMAGE_TAG
 
       # (Optional) Verify image pushed
       - name: Verify ECR image
