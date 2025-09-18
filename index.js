@@ -27,7 +27,7 @@ app.post("/orders", async (req, res) => {
 
     await ddb.send(
       new PutCommand({
-        TableName: process.env.ORDERS_TABLE,
+        TableName: process.env.ORDERS_TABLE || 'OrdersTable',
         Item: order,
       })
     );
