@@ -44,4 +44,4 @@ jobs:
         run: |
           aws ecr describe-images \
             --repository-name ${{ secrets.ECR_REPOSITORY }} \
-            --region ${{ secrets.AWS_REGION }}
+            --region ${{ secrets.AWS_REGION }}      
