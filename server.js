@@ -4,7 +4,6 @@ import orderRoutes from "./src/routes/order.routes.js";
 
 const app = express();
 app.use(bodyParser.json());
-
 // Routes
 app.use("/orders", orderRoutes);
 
