@@ -1,6 +1,7 @@
 {
   "family": "order-service-task",
   "executionRoleArn": "arn:aws:iam::230027225622:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::230027225622:role/ecsTaskRole",
   "networkMode": "awsvpc",
   "containerDefinitions": [
     {
@@ -13,7 +14,15 @@
       "environment": [
         { "name": "AWS_REGION", "value": "us-east-1" },
         { "name": "DYNAMODB_TABLE", "value": "Orders" }
-      ]
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/order-service",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
     }
   ],
   "requiresCompatibilities": ["FARGATE"],
